@@ -1,6 +1,6 @@
 using DataStructures
 
-data =hcat(map(x -> split(chop(x),  ""), readlines(open("input.txt", "r")))...)
+data = hcat(map(x -> split(chop(x),  ""), readlines(open("input.txt", "r")))...)
 charOcc = Array(OrderedDict{Char, Int}, size(data, 1))
 for line in 1:size(data, 1)
   charOcc[line] = OrderedDict{Char, Int}()
