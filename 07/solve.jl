@@ -41,13 +41,12 @@ println(length(filter(x -> begin
       end
     end
     if valid && !isempty(targetList)
-      curFound = false
+      valid = false
       for t in targetList
         for y in hyp
-          curFound |= contains(y, t)
+          valid |= contains(y, t)
         end
       end
-      valid &= curFound
     end
     return valid
   end, data)))
