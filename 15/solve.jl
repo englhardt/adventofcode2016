@@ -6,7 +6,7 @@ range = data[:, 2]
 
 function simulate(pos)
   t = 0
-  while !reduce(&, (pos + collect(0:length(pos) - 1)) .% range .== pos[1])
+  while !all((pos + collect(0:length(pos) - 1)) .% range .== pos[1])
     pos = (pos + 1) .% range
     t += 1
   end
